@@ -55,33 +55,40 @@ int jumlah;
     }
 
     void editLaptop(string merk, string tipe, string warna, int harga) {
-    for (int i = 0; i < jumlah; i++) {
-        if (data[i].getMerk() == merk) {
-            if (data[i].getTipe() != tipe) {
-                data[i].setTipe(tipe);
+        for (int i = 0; i < jumlah; i++) {
+            if (data[i].getMerk() == merk) {
+                if (data[i].getTipe() != tipe) {
+                    data[i].setTipe(tipe);
+                }
+                if (data[i].getWarna() != warna) {
+                    data[i].setWarna(warna);
+                }
+                if (data[i].getHarga() != harga) {
+                    data[i].setHarga(harga);
+                }
+                return;
+                }
             }
-            if (data[i].getWarna() != warna) {
-                data[i].setWarna(warna);
+            cout << "Data Tidak ditemukan:(\n"; 
             }
-            if (data[i].getHarga() != harga) {
-                data[i].setHarga(harga);
-            }
-        }
-    }
-}
 
-void hapusLaptop(string merk) {
-    for (int i = 0; i < jumlah; i++) {  
-        if (data[i].getMerk() == merk) {
-            // geser elemen ke kiri
-            for (int j = i; j < jumlah - 1; j++) {
-                data[j] = data[j + 1];
+
+    void hapusLaptop(string merk) {
+        int sebelum = jumlah;  // simpan jumlah awal
+        for (int i = 0; i < jumlah; i++) {  
+            if (data[i].getMerk() == merk) {
+                for (int j = i; j < jumlah - 1; j++) {
+                    data[j] = data[j + 1];
+                }
+                jumlah--;
+                i--; 
             }
-            jumlah--;
-            i--; // supaya posisi i dicek lagi setelah geser
+        }
+        if (sebelum == jumlah) {
+            cout << "Data Tidak ditemukan:(\n";
         }
     }
-}
+
 
     void tampilLaptop(){
         for(int i=0; i<jumlah; i++){
