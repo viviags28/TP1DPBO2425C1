@@ -8,11 +8,18 @@ class Laptopdata{
 private:
 struct Laptop
 {
+    int id;
     string merk;
     string tipe;
     string warna;
     int harga;
 
+    void setId(int id){
+        this->id = id;
+    }
+    int getId(){
+        return this->id;
+    }
     void setMerk(string merk){
         this->merk = merk;
     }
@@ -48,50 +55,47 @@ int jumlah;
         jumlah = 0;
     }
 
-    void tambahLaptop(string merk, string tipe, string warna, int harga){
-        Laptop isi ={merk, tipe, warna, harga};
+    void tambahLaptop(int id, string merk, string tipe, string warna, int harga){
+        Laptop isi ={id, merk, tipe, warna, harga};
         data[jumlah] = isi;
         jumlah++;
     }
 
-    void editLaptop(string merk, string tipe, string warna, int harga) {
-        for (int i = 0; i < jumlah; i++) {
-            if (data[i].getMerk() == merk) {
-                if (data[i].getTipe() != tipe) {
-                    data[i].setTipe(tipe);
-                }
-                if (data[i].getWarna() != warna) {
-                    data[i].setWarna(warna);
-                }
-                if (data[i].getHarga() != harga) {
-                    data[i].setHarga(harga);
-                }
-                return;
-                }
+    void editLaptop(int id, string merk, string tipe, string warna, int harga) {
+    for (int i = 0; i < jumlah; i++) {
+        if (data[i].getId() == id) {
+            if (data[i].getMerk() != merk) {
+                data[i].setMerk(merk);
             }
-            cout << "Data Tidak ditemukan:(\n"; 
+            if (data[i].getTipe() != tipe) {
+                data[i].setTipe(tipe);
             }
-
-
-    void hapusLaptop(string merk) {
-        int sebelum = jumlah;  // simpan jumlah awal
-        for (int i = 0; i < jumlah; i++) {  
-            if (data[i].getMerk() == merk) {
-                for (int j = i; j < jumlah - 1; j++) {
-                    data[j] = data[j + 1];
-                }
-                jumlah--;
-                i--; 
+            if (data[i].getWarna() != warna) {
+                data[i].setWarna(warna);
             }
-        }
-        if (sebelum == jumlah) {
-            cout << "Data Tidak ditemukan:(\n";
+            if (data[i].getHarga() != harga) {
+                data[i].setHarga(harga);
+            }
         }
     }
+}
 
+void hapusLaptop(int id) {
+    for (int i = 0; i < jumlah; i++) {  
+        if (data[i].getId() == id) {
+            // geser elemen ke kiri
+            for (int j = i; j < jumlah - 1; j++) {
+                data[j] = data[j + 1];
+            }
+            jumlah--;
+            i--; // supaya posisi i dicek lagi setelah geser
+        }
+    }
+}
 
     void tampilLaptop(){
         for(int i=0; i<jumlah; i++){
+            cout << "ID   : " << data[i].getId() << endl;
             cout << "Merk : " << data[i].getMerk() << endl;
             cout << "Tipe : " << data[i].getTipe() << endl;
             cout << "Warna : " << data[i].getWarna() << endl;
