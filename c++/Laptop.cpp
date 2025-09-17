@@ -2,18 +2,22 @@
 #include <string>
 using namespace std;
 
-const int n = 99;
+// Kapasitas isi data laptonyaa
+const int n = 99; 
 
+// Kelas untuk menyimpan dan mengelola data laptop
 class Laptopdata{
 private:
 struct Laptop
 {
+    // Struktur data Laptop
     int id;
     string merk;
     string tipe;
     string warna;
     int harga;
 
+    // Setter dan Getter untuk setiap atribut
     void setId(int id){
         this->id = id;
     }
@@ -46,24 +50,28 @@ struct Laptop
     }
 };
 
-    
+    // Array untuk menyimpan data laptop
     Laptop data[n];
 
 public:
+// Jumlah data laptop saat ini
 int jumlah;
     Laptopdata(){
+       // Inisialisasi jumlah = 0
         jumlah = 0;
     }
 
+    // Fungsi untuk menambah laptop baru
     void tambahLaptop(int id, string merk, string tipe, string warna, int harga){
         Laptop isi ={id, merk, tipe, warna, harga};
-        data[jumlah] = isi;
+        data[jumlah] = isi; // Simpan di posisi terakhir
         jumlah++;
     }
 
+    // Fungsi untuk mengedit data laptop berdasarkan id
     void editLaptop(int id, string merk, string tipe, string warna, int harga) {
     for (int i = 0; i < jumlah; i++) {
-        if (data[i].getId() == id) {
+        if (data[i].getId() == id) { // Cari id yang cocok
             if (data[i].getMerk() != merk) {
                 data[i].setMerk(merk);
             }
@@ -80,6 +88,7 @@ int jumlah;
     }
 }
 
+// Fungsi untuk menghapus data laptop berdasarkan id
 void hapusLaptop(int id) {
     for (int i = 0; i < jumlah; i++) {  
         if (data[i].getId() == id) {
@@ -93,6 +102,7 @@ void hapusLaptop(int id) {
     }
 }
 
+// Fungsi untuk menampilkan semua data laptop
     void tampilLaptop(){
         for(int i=0; i<jumlah; i++){
             cout << "ID   : " << data[i].getId() << endl;
