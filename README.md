@@ -3,19 +3,17 @@ Saya Vivi Agustina Suryana dengan NIM 2400456 mengerjakan Tugas Praktikum 1 dala
 
 #Penjelasan Atribut
 TUgas ini adalah implementasi Object-Oriented Programming (OOP) dalam empat bahasa pemrograman yaitu C++, Python, Java, dan PHP. Program ini mensimulasikan sistem invetaris dalam Toko Laptop, di mana pengguna dapat:
-
-    Menambah laptop baru
-    Mengedit laptop yang sudah ada
-    Menghapus laptop dari data
-    Menampilkan daftar laptop
-    Mencari laptop berdasarkan id
+1. Menambah laptop baru
+2. Mengedit laptop yang sudah ada
+3. Menghapus laptop dari data
+4. Menampilkan daftar laptop
+5. Mencari laptop berdasarkan id
 
 Setiap produk memiliki atribut berikut:
-
-    Id
-    Merk
-    Tipe
-    Warna
-    Harga 
-    (Khusus PHP) Gambar 
+1. Id
+2. Merk
+3. Tipe
+4. Warna
+5. Harga 
+6. (Khusus PHP) Gambar 
 
