@@ -2,13 +2,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        Laptop laptop = new Laptop();
+        Scanner sc = new Scanner(System.in);  // Scanner untuk input user
+        Laptop laptop = new Laptop();         // Objek Laptop untuk kelola data
 
         int id, harga;
         String merk, tipe, warna;
         String action;
 
+        // Menu awal
         System.out.println(" Selamat Datang ");
         System.out.println(" Silahkan Pilih Opsi");
         System.out.println(" 1: Tambah");
@@ -17,10 +18,12 @@ public class Main {
         System.out.println(" 4: Tampilkan");
         System.out.println(" 5: Keluar");
 
+        // Perulangan menu agar bisa memilih berulang kali
         while (true) {
             System.out.print("Pilihan: ");
-            action = sc.nextLine();
+            action = sc.nextLine();  // ambil input pilihan user
 
+            // Tambah laptop baru
             if (action.equals("1")) {
                 System.out.print("id: ");
                 id = Integer.parseInt(sc.nextLine());
@@ -32,9 +35,11 @@ public class Main {
                 warna = sc.nextLine();
                 System.out.print("Harga: ");
                 harga = Integer.parseInt(sc.nextLine());
+
                 laptop.tambahLaptop(id, merk, tipe, warna, harga);
                 System.out.println("Laptop berhasil ditambahkan:)");
             } 
+            // Edit data laptop berdasarkan id
             else if (action.equals("2")) {
                 System.out.print("Masukkan id yang ingin diedit: ");
                 id = Integer.parseInt(sc.nextLine());
@@ -46,15 +51,18 @@ public class Main {
                 warna = sc.nextLine();
                 System.out.print("Harga baru: ");
                 harga = Integer.parseInt(sc.nextLine());
+
                 laptop.editLaptop(id, merk, tipe, warna, harga);
                 System.out.println("Laptop berhasil diedit:)");
             } 
+            // Hapus laptop berdasarkan id
             else if (action.equals("3")) {
                 System.out.print("Masukkan id yang ingin dihapus: ");
                 id = Integer.parseInt(sc.nextLine());
                 laptop.hapusLaptop(id);
                 System.out.println("Laptop dengan id " + id + " berhasil dihapus:)");
             } 
+            // Tampilkan semua data laptop
             else if (action.equals("4")) {
                 if (laptop.jumlah == 0) {
                     System.out.println("Data Tidak ditemukan:(");
@@ -62,15 +70,17 @@ public class Main {
                     laptop.tampilLaptop();
                 }
             } 
+            // Keluar dari program
             else if (action.equals("5")) {
                 System.out.println("Terimakasih telah berkunjung:)");
                 break;
             } 
+            // Jika input tidak sesuai menu
             else {
                 System.out.println("Pilihan tidak valid:(");
             }
         }
 
-        sc.close();
+        sc.close(); // tutup scanner
     }
 }

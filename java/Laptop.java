@@ -1,6 +1,8 @@
 public class Laptop {
+    // Konstanta jumlah maksimal data laptop
     private static final int n = 99;
 
+    // Inner class untuk menyimpan data tiap laptop
     private class LaptopData {
         private int id;
         private String merk;
@@ -8,6 +10,7 @@ public class Laptop {
         private String warna;
         private int harga;
 
+        // Setter dan Getter untuk ID
         public void setId(int id) {
             this.id = id;
         }
@@ -15,6 +18,7 @@ public class Laptop {
             return this.id;
         }
 
+        // Setter dan Getter untuk Merk
         public void setMerk(String merk) {
             this.merk = merk;
         }
@@ -22,6 +26,7 @@ public class Laptop {
             return this.merk;
         }
 
+        // Setter dan Getter untuk Tipe
         public void setTipe(String tipe) {
             this.tipe = tipe;
         }
@@ -29,6 +34,7 @@ public class Laptop {
             return this.tipe;
         }
 
+        // Setter dan Getter untuk Warna
         public void setWarna(String warna) {
             this.warna = warna;
         }
@@ -36,6 +42,7 @@ public class Laptop {
             return this.warna;
         }
 
+        // Setter dan Getter untuk Harga
         public void setHarga(int harga) {
             this.harga = harga;
         }
@@ -44,14 +51,18 @@ public class Laptop {
         }
     }
 
+    // Array untuk menyimpan daftar laptop
     private LaptopData[] data;
+    // Jumlah laptop yang tersimpan
     public int jumlah;
 
+    // Konstruktor kelas Laptop
     public Laptop() {
-        data = new LaptopData[n];
-        jumlah = 0;
+        data = new LaptopData[n]; // alokasi array
+        jumlah = 0;               // awalnya kosong
     }
 
+    // Method untuk menambah data laptop baru
     public void tambahLaptop(int id, String merk, String tipe, String warna, int harga) {
         LaptopData isi = new LaptopData();
         isi.setId(id);
@@ -60,10 +71,11 @@ public class Laptop {
         isi.setWarna(warna);
         isi.setHarga(harga);
 
-        data[jumlah] = isi;
-        jumlah++;
+        data[jumlah] = isi; // simpan ke array
+        jumlah++;           // jumlah bertambah
     }
 
+    // Method untuk mengedit data laptop berdasarkan id
     public void editLaptop(int id, String merk, String tipe, String warna, int harga) {
         for (int i = 0; i < jumlah; i++) {
             if (data[i].getId() == id) {
@@ -83,19 +95,22 @@ public class Laptop {
         }
     }
 
+    // Method untuk menghapus data laptop berdasarkan id
     public void hapusLaptop(int id) {
         for (int i = 0; i < jumlah; i++) {
             if (data[i].getId() == id) {
+                // geser semua elemen setelahnya ke kiri
                 for (int j = i; j < jumlah - 1; j++) {
                     data[j] = data[j + 1];
                 }
-                data[jumlah - 1] = null;
-                jumlah--;
-                i--;
+                data[jumlah - 1] = null; // hapus elemen terakhir
+                jumlah--;                // kurangi jumlah
+                i--;                     // cek ulang index ini
             }
         }
     }
 
+    // Method untuk menampilkan semua data laptop
     public void tampilLaptop() {
         for (int i = 0; i < jumlah; i++) {
             System.out.println("ID   : " + data[i].getId());
