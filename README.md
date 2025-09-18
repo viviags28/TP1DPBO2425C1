@@ -1,4 +1,4 @@
-<img width="227" height="266" alt="image" src="https://github.com/user-attachments/assets/cc41f2b8-a790-4e06-af3b-b42fe6124733" /># Janji
+# Janji
 Saya Vivi Agustina Suryana dengan NIM 2400456 mengerjakan Tugas Praktikum 1 dalam mata kuliah Desain dan Pemrograman Berorientasi Objek untuk keberkahanNya maka saya tidak melakukan kecurangan seperti yang telah dispesifikasikan.
 
 # Penjelasan Atribut
