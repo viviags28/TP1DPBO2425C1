@@ -15,5 +15,9 @@ Setiap produk memiliki atribut berikut:
 3. Tipe
 4. Warna
 5. Harga 
-6. (Khusus PHP) Gambar 
+6. (Khusus PHP) Gambar
+
+#Struktur OOP dalam Program
+1. Tampilan Awal
+   <img width="722" height="280" alt="image" src="https://github.com/user-attachments/assets/a0eea49a-142a-47ed-8716-ba5d8a32c72d" />
 
