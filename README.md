@@ -21,8 +21,11 @@ Setiap produk memiliki atribut berikut:
 1. Tampilan Awal
    
    <img width="722" height="280" alt="image" src="https://github.com/user-attachments/assets/a0eea49a-142a-47ed-8716-ba5d8a32c72d" />
+   
    Saat program di jalankan akan langsung terlihat menu opsi yang akan bisa di pilih oleh user untuk melakukan penambahan, edit, hapus, dan menampilkan data dari laptop yang ada.
+   
    2. Action 1 Menambah Data
+      
       <img width="698" height="366" alt="image" src="https://github.com/user-attachments/assets/70fbf79a-166f-4bac-b43a-58f0e9efaea1" />
 
       Saat user memilih opsi 1 user akan diminta untuk memberikan proses inputan untuk menambah data baru dengan isi Id, Merk, Tipe, Warna, Harga, (Khusus PHP) Gambar. Setelah proses input selesai data akan disimpan pada sebuah array yang khusus untuk menyimpan data tersebut.
